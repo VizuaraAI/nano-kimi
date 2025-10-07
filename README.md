@@ -1,73 +1,185 @@
-🌟 NanoKimiK2 vs NanoGPT: A Thrilling Transformer Showdown! 🌟
-Welcome to the electrifying world of AI language models! This repository showcases a ground-up implementation of the innovative NanoKimiK2 transformer, pitted against the classic NanoGPT in a head-to-head battle. Trained on the whimsical TinyStories dataset, these models compete to deliver the best in loss metrics, perplexity, and creative storytelling. Get ready for an exciting journey into the future of natural language processing!
-🚀 Project Highlights
+# 🌟 **NanoKimiK2 vs NanoGPT: A Transformer Showdown**
 
-NanoKimiK2: A custom-built marvel featuring Mixture of Experts (MoE), SwiGLU activation, RoPE (Rotary Position Embeddings), and MLAAttention. Powered by a cutting-edge Muon optimizer for top-notch training efficiency.
-NanoGPT: The legendary baseline transformer, reimagined for this epic comparison.
-Dataset: The charming TinyStories dataset, tokenized with SentencePiece for a fair fight.
-Goal: Unleash a showdown of training dynamics, validation prowess, and generative flair!
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License">
+  <img src="https://img.shields.io/badge/PyTorch-2.2+-ee4c2c?logo=pytorch&logoColor=white" alt="PyTorch">
+  <img src="https://img.shields.io/badge/Python-3.8+-yellow.svg" alt="Python">
+  <img src="https://img.shields.io/badge/Dataset-TinyStories-9cf" alt="Dataset">
+  <img src="https://img.shields.io/badge/HuggingFace-Compatible-orange.svg" alt="Hugging Face">
+</p>
 
-🎨 Key Features
+A **complete open-source framework** to train, compare, and analyze **NanoKimiK2** and **NanoGPT** — two small yet powerful transformer architectures designed for creativity and research.
 
-Innovative Design: Packed with SwiGLU, MoELayer, MLAAttention, and a bespoke Muon optimizer.
-Performance Boost: Supports mixed precision training (bf16, fp16, fp32) with smart OOM retry logic.
-Insightful Metrics: Tracks Negative Log Likelihood (NLL), Bits Per Character (BPC), perplexity, and auxiliary loss stats.
-Creative Sparks: Generates dazzling sample stories at regular intervals to showcase qualitative magic.
+---
 
-🛠️ Getting Started
-Prerequisites
+## 🎯 The Mission: Open-Source Transformer Innovation
 
-Python 3.8+
-PyTorch
-datasets (Hugging Face)
-sentencepiece
-numpy
-matplotlib (for stunning visualizations)
+When open-weight models like *NanoGPT* arrived, they inspired a wave of innovation — but few projects offered **fully open, reproducible training frameworks**.
 
-Fire up your setup with:
-pip install torch datasets sentencepiece numpy matplotlib
+**NanoKimiK2_vs_NanoGPT** bridges that gap.
+It provides an **end-to-end codebase** for training, evaluation, and benchmarking of two models:
 
-How to Run
+* **NanoGPT** – the classic baseline
+* **NanoKimiK2** – a next-gen experimental architecture with modern design features like **Mixture of Experts**, **SwiGLU**, and **RoPE**
 
-Clone the Repo:
+This isn’t just a model comparison — it’s an exploration into **what makes transformers learn, reason, and create**.
+
+---
+
+## ⚙️ Core Features
+
+| Category            | Description                                                                 |
+| ------------------- | --------------------------------------------------------------------------- |
+| 🚀 **Performance**  | Mixed precision training (`bf16`, `fp16`, `fp32`) with auto OOM retry logic |
+| 🧠 **Architecture** | NanoKimiK2 integrates **MoE**, **SwiGLU**, **MLAAttention**, and **RoPE**   |
+| ⚡ **Optimizer**     | Powered by the efficient **Muon Optimizer**                                 |
+| 📊 **Metrics**      | Tracks **NLL**, **BPC**, **Perplexity**, and auxiliary losses               |
+| ✨ **Creativity**    | Periodic **story generation** for qualitative insight                       |
+| 🧩 **Configurable** | Fully modular — tweak batch size, sequence length, epochs, and checkpoints  |
+
+---
+
+## 🧰 Project Structure
+
+```
+├── main.py                # Core training loop, evaluation, and model logic
+├── configs/               # Model & training hyperparameter configs
+├── data/                  # Tokenized TinyStories dataset
+├── checkpoints/           # Model checkpoints
+├── results/               # Logs, plots, and generated stories
+├── LICENSE
+└── README.md
+```
+
+---
+
+## 🚀 Getting Started
+
+### **Step 1: Setup Environment**
+
+```bash
 git clone https://github.com/yourusername/NanoKimiK2_vs_NanoGPT.git
 cd NanoKimiK2_vs_NanoGPT
+pip install torch datasets sentencepiece numpy matplotlib
+```
 
+---
 
-Launch the Magic:
+### **Step 2: Train the Models**
+
+Launch the training loop for both models:
+
+```bash
 python main.py
+```
 
+Customize key parameters inside the configuration block:
 
-Tweak the Fun:
+* `BATCH_SIZE`
+* `SEQ_LEN`
+* `EPOCHS`
+* `USE_CHECKPOINTING`
 
-Adjust hyperparameters in the Runtime / Performance Configurations section (e.g., BATCH_SIZE, EPOCHS, SEQ_LEN).
-Toggle checkpointing with USE_CHECKPOINTING.
+---
 
+### **Step 3: Monitor the Showdown**
 
-Watch the Show:
+During training:
 
-Enjoy live updates of training and validation losses.
-Marvel at story generations every STORY_GEN_INTERVAL steps.
-Dive into loss tables and VRAM usage for a deep dive.
+* Observe **training/validation losses**
+* View **real-time story generations**
+* Analyze **loss tables**, **VRAM usage**, and **metric curves**
 
+---
 
+## 📊 Sample Results
 
-📂 File Structure
+| Metric                 | Description                                        |
+| ---------------------- | -------------------------------------------------- |
+| **Training Loss**      | Compare convergence between NanoKimiK2 and NanoGPT |
+| **Validation Metrics** | Observe Perplexity, NLL, and BPC                   |
+| **Generated Stories**  | Witness qualitative improvement across epochs      |
 
-main.py: The heart of the action, housing model definitions, training loops, and evaluation wizardry.
+Sample stories are automatically saved under the `results/` directory — allowing you to track creative evolution step-by-step.
 
-📊 Results to Expect
+---
 
-Training Loss: Witness the convergence race between NanoKimiK2 and NanoGPT.
-Validation Metrics: Feast your eyes on perplexity, NLL, and BPC to judge the champs.
-Story Generation: Revel in the creative tales spun by both models.
+## 🧪 Example Commands
 
-🤝 Contribute to the Epic
-Love the vibe? Fork this repo and send pull requests with your enhancements or bug fixes. Update this README with your heroic contributions!
-📜 License
-This project rocks under the MIT License - check out the LICENSE file for the fine print.
-🙌 Shoutouts
+Train specific models:
 
-Inspired by the genius of NanoGPT by Andrej Karpathy.
-Powered by the TinyStories dataset from Hugging Face.
-Big thanks to the PyTorch community for their awesome tools and docs!
+```bash
+python main.py --model nanogpt --epochs 15 --batch_size 8
+python main.py --model nanokimik2 --epochs 15 --batch_size 8
+```
+
+Enable gradient checkpointing for large runs:
+
+```bash
+USE_CHECKPOINTING=True python main.py
+```
+
+---
+
+## 🔭 Watching the Models Learn
+
+Over training, both models evolve from simple word associations to coherent storytelling.
+The **NanoKimiK2** model often exhibits sharper syntax consistency and thematic depth due to its SwiGLU + MoE combination.
+
+Visual comparisons (training curves, story snapshots, perplexity evolution) can be found in the `results/` directory.
+
+---
+
+## 🧭 Roadmap
+
+* [ ] Add **FSDP** and **DeepSpeed** support for large-scale training
+* [ ] Implement **quantization-aware training**
+* [ ] Integrate **TensorBoard/W&B** dashboards
+* [ ] Extend to **multi-lingual TinyStories** dataset
+* [ ] Publish **pre-trained checkpoints** on Hugging Face Hub
+
+---
+
+## 🤝 Contributing
+
+We welcome community contributions!
+To contribute:
+
+1. **Fork** this repository
+2. Create a feature branch → `feature/your-feature`
+3. **Commit**, **push**, and open a Pull Request
+
+Please maintain clean, modular code and include comments for readability.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+See the [LICENSE](LICENSE) file for more details.
+
+---
+
+## 🙌 Acknowledgements
+
+* Inspired by **NanoGPT** by *Andrej Karpathy*
+* Dataset: **TinyStories** (Hugging Face)
+* Framework: **PyTorch**
+* Developed by **Devashish Gaikwad (2025)**
+
+---
+
+## 📚 Citation
+
+If you find this project useful for your research or experiments, please cite:
+
+```bibtex
+@software{Devashish_NanoKimiK2_vs_NanoGPT_2025,
+  author = {Devashish Gaikwad},
+  title = {{NanoKimiK2 vs NanoGPT: A Comparative Study of Transformer Architectures}},
+  month = {October},
+  year = {2025},
+  url = {https://github.com/yourusername/NanoKimiK2_vs_NanoGPT}
+}
+```
+

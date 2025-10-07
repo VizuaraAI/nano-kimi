@@ -1,7 +1,3 @@
-Perfect 👌 Since everything is inside **one Jupyter notebook** and not in multiple folders or `.py` files, here’s your **final, polished, professional README** — clean, structured, and fully aligned with your GitHub repo setup (`https://github.com/VizuaraAI/nano-kimi`):
-
----
-
 # 🌟 **NanoKimiK2 vs NanoGPT: A Transformer Showdown**
 
 <p align="center">
@@ -36,7 +32,7 @@ This project is not just a comparison — it’s an exploration into **how trans
 | ------------------- | ------------------------------------------------------------------------------- |
 | 🚀 **Performance**  | Mixed precision training (`bf16`, `fp16`, `fp32`) with auto OOM retry logic     |
 | 🧠 **Architecture** | NanoKimiK2 integrates **MoE**, **SwiGLU**, **MLAAttention**, and **RoPE**       |
-| ⚡ **Optimizer**     | Powered by the advanced **Muon Optimizer**                                      |
+| ⚡ **Optimizer**     | Powered by the custom made advanced **Muon Optimizer**                         |
 | 📊 **Metrics**      | Tracks **NLL**, **BPC**, **Perplexity**, and auxiliary losses                   |
 | ✨ **Creativity**    | Periodic **story generation** for qualitative analysis                          |
 | 🧩 **Configurable** | Hyperparameters like batch size, epochs, and sequence length are easily tunable |
@@ -149,7 +145,3 @@ If you use or refer to this project, please cite:
   url = {https://github.com/VizuaraAI/nano-kimi}
 }
 ```
-
----
-
-Would you like me to add a **“Notebook Preview” section** with a thumbnail (like a screenshot of a training cell or graph) that links directly to your `.ipynb` file? It looks great on GitHub and attracts readers instantly.

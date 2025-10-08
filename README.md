@@ -193,16 +193,6 @@ Over training, both models evolve from simple word associations to coherent stor
 
 ---
 
-## 🧭 Roadmap
-
-* [ ] Add **FSDP / DeepSpeed** support for scalable experiments
-* [ ] Integrate **TensorBoard / W&B** logging
-* [ ] Explore **quantization-aware training**
-* [ ] Extend to **multi-lingual TinyStories**
-* [ ] Publish **pre-trained weights** on Hugging Face Hub
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome!
@@ -225,10 +215,11 @@ See the [LICENSE](LICENSE) file for more details.
 
 ## 🙌 Acknowledgements
 
+* Special thanks to the NanoKimiK2 developers for their inspiration and guidance. *
 * Inspired by **NanoGPT** by *Andrej Karpathy*
 * Dataset: **TinyStories** (Hugging Face)
 * Framework: **PyTorch**
-* Developed by **Devashish Gaikwad (2025)**
+
 
 ---
 
@@ -237,9 +228,9 @@ See the [LICENSE](LICENSE) file for more details.
 If you use or refer to this project, please cite:
 
 ```bibtex
-@software{Devashish_NanoKimiK2_vs_NanoGPT_2025,
-  author = {Devashish Gaikwad},
-  title = {{NanoKimiK2 vs NanoGPT: A Comparative Study of Transformer Architectures}},
+@software{Vizuara_NanoKimiK2_vs_NanoGPT_2025,
+  author = {Devashish Gaikwad and Dr. Raj Dandekar},
+  title = {{NanoKimiK2 vs NanoGPT: A Transformer Showdown}},
   month = {October},
   year = {2025},
   url = {https://github.com/VizuaraAI/nano-kimi}

@@ -182,7 +182,7 @@ Here is the table:
 
 
 ### Validation Loss Comparison
-To assess generalization on unseen data from the TinyStories validation set, we tracked average validation loss (Negative Log Likelihood, NLL) over segmented training intervals. Metrics were computed every 200 steps—a frequency chosen to balance computational overhead (evaluations are memory-intensive in MoE setups) with timely monitoring of progress, allowing early detection of convergence issues without excessively interrupting the 50k-step-per-epoch training flow. These per-eval results were then averaged per 1000-step segment to smooth out batch-to-batch noise and highlight stable trends, making it easier to visualize architectural differences in a compact table format.
+To assess generalization on unseen data from the TinyStories validation set, we tracked average validation loss, over segmented training intervals. Metrics were computed every 200 steps—a frequency chosen to balance computational overhead (evaluations are memory-intensive in MoE setups) with timely monitoring of progress, allowing early detection of convergence issues without excessively interrupting the 50k-step-per-epoch training flow. These per-eval results were then averaged per 1000-step segment to smooth out batch-to-batch noise and highlight stable trends, making it easier to visualize architectural differences in a compact table format.
 
 | Segment    | NanoKimiK2 Avg Val Loss | NanoGPT Avg Val Loss |
 |------------|-------------------------|----------------------|
@@ -202,10 +202,7 @@ To assess generalization on unseen data from the TinyStories validation set, we 
 1. **NanoGPT's Generalization Edge**: NanoGPT consistently achieves lower validation loss across all segments, with an initial gap of ~0.71 that widens to ~1.71 mid-training before slightly narrowing. This highlights the dense architecture's (standard MHA + ReLU FFNs) robustness on simple, short narratives like TinyStories, where it avoids the overhead of sparse MoE routing.  
 2. **NanoKimiK2's Steady but Slower Progress**: NanoKimiK2 shows monotonic improvement (dropping from 4.25 to 3.41 overall), thanks to SwiGLU's smooth gradients and RoPE's positional efficiency. However, its shallower decline (~0.84 total vs. NanoGPT's ~1.82) reflects MoE's "pretraining hump"—auxiliary losses (e.g., load balancing) temporarily hinder generalization until experts specialize (~10k+ steps).  
 3. **Trade-Offs in Efficiency vs. Potential**: The gap peaks mid-training, aligning with MoE literature (e.g., Switch Transformers), where sparse models require more compute to match dense baselines but excel in emergent behaviors like narrative creativity (see generation samples below). At scale, NanoKimiK2 narrows the divide, suggesting untapped gains with tweaks like higher top-k routing.  
-4. **Beyond NLL: Holistic Evaluation**: While NanoGPT wins on raw metrics, NanoKimiK2's qualitative strengths (e.g., better story coherence) indicate NLL alone undercaptures MoE's representational power—reinforcing the need for hybrid evals (perplexity, BPC, and human-rated flow).  
-
-This "validation paradox" (NanoKimiK2 faster on train, NanoGPT stronger on val) underscores transformer design choices: Simplicity for quick wins vs. modularity for long-term innovation. Future iterations could close the gap via expert pruning or extended epochs!
-
+  
 ---
 
 ## 🔭 Observations
